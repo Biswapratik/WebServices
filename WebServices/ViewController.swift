@@ -9,12 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var inputTextField: UITextField!
+    var viewModel = ViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
+    @IBAction func getUserDetails(_ sender: Any) {
+        
+//        viewModel.getUserDetails(userId: Int(inputTextField.text!)!) { (userInfo) in
+//            print(userInfo)
+//        }
+        
+        viewModel.getUsersDetails(pageId: Int(inputTextField.text!)!) { (userInfo) in
+            print(userInfo)
+        }
+    }
+    
+    
 
 }
 

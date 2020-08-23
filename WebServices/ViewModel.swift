@@ -46,7 +46,7 @@ class ViewModel {
         
     }
     
-    func getUsersDetails(pageId: Int, successHandler: @escaping (([String: Any]) -> Void)) {
+    func getUsersDetails(pageId: Int, successHandler: @escaping (([User]) -> Void)) {
         
         // Step 1 - Creating the Request
         let urlString = baseURl
@@ -61,15 +61,23 @@ class ViewModel {
           
         // Step 2 - Sending the Request
         let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
             if error != nil {
                 print("Error: \(String(describing: error))")
                 return
             }
             guard let data = data else { return }
             do {
-                self?.userInfos = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any]
-                successHandler(self?.userInfos ?? [:])
+                let rawData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any]
+                var mainUsers: [User] = []
+                if let users = rawData!["data"] as? [[String: Any]] {
+                    for aUserInfo in users {
+                        let aUser = User(userDetails: aUserInfo)
+                        mainUsers.append(aUser)
+                    }
+                }
+                
+                successHandler(mainUsers)
             } catch {
                 print("Failed to parse: \(error)")
             }

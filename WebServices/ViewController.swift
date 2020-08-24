@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel = ViewModel()
-    var user: User?
-    var users: [User] = []
+    var user: NewUser?
+    var users: [NewUser] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +32,29 @@ class ViewController: UIViewController {
 //        }
         
         
+//        viewModel.getUserDetails(userId: Int(inputTextField.text!)!) { (userInfo) in
+//            print(userInfo)
+//            self.user = userInfo.data
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
+        
+        
+//        viewModel.getUsersDetails(pageId: Int(inputTextField.text!)!) { [weak self] (users) in
+//            self?.users = users
+//            DispatchQueue.main.async {
+//                self?.tableView.reloadData()
+//            }
+//        }
+        
         viewModel.getUsersDetails(pageId: Int(inputTextField.text!)!) { [weak self] (users) in
             self?.users = users
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
+        
         
     }
     

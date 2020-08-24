@@ -15,6 +15,7 @@
 		23AF2F2224EFCA3900C39719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23AF2F2124EFCA3900C39719 /* Assets.xcassets */; };
 		23AF2F2524EFCA3900C39719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23AF2F2324EFCA3900C39719 /* LaunchScreen.storyboard */; };
 		23AF2F2D24EFCB4500C39719 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AF2F2C24EFCB4500C39719 /* ViewModel.swift */; };
+		23D1E07724F3C96300F560B5 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1E07624F3C96300F560B5 /* NewUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		23AF2F2424EFCA3900C39719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23AF2F2624EFCA3900C39719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23AF2F2C24EFCB4500C39719 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		23D1E07624F3C96300F560B5 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				23AF2F2324EFCA3900C39719 /* LaunchScreen.storyboard */,
 				23AF2F2624EFCA3900C39719 /* Info.plist */,
 				23AF2F2C24EFCB4500C39719 /* ViewModel.swift */,
+				23D1E07624F3C96300F560B5 /* NewUser.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23AF2F1D24EFCA3800C39719 /* ViewController.swift in Sources */,
+				23D1E07724F3C96300F560B5 /* NewUser.swift in Sources */,
 				23AF2F1924EFCA3800C39719 /* AppDelegate.swift in Sources */,
 				23AF2F2D24EFCB4500C39719 /* ViewModel.swift in Sources */,
 				2335D17F24F2C12F002D0B4A /* UserModel.swift in Sources */,
